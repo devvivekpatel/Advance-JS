@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        height: 90vh;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 80px;
+    }
+    .btn{
+        padding:  5px;
+        margin: 10px;
+        background-color: rgb(103, 49, 97);
+        color: white;
+        border-radius: 5px;
+    }
+    #num{
+        font-size: 100px;
+        font-weight: bold;
+        color: red;
+        font-family: sans-serif;
+        height: 300px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(80, 222, 237);
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <div class="container">
+      <!-- <input type="number" id="num"> -->
+      <span id="num">0</span>
+        <div class="btns">
+        <button class="btn" id="decrease" onclick="decrease()">Decrease</button>
+        <button class="btn" id="reset" onclick="reset()">Reset</button>
+        <button class="btn" id="increase" onclick="increase()">Increase</button>
+    </div>
+    </div>
+    <script>
+
+         var count =0;
+        // let num = document.getElementById("num").value;  💡💡why it's not working
+        let num = document.getElementById("num");
+        //  count = parseInt(num.innerHTML);   💡don't need
+        
+        console.log(num);
+
+        
+       function decrease(){
+           count--;
+           num.innerHTML = count;
+        }
+       function increase(){
+           count++;
+           num.innerHTML = count;
+        }
+       function reset(){
+           count=0;
+           num.innerHTML = count;
+        }
+
+    </script>
+    
+</body>
+</html>
