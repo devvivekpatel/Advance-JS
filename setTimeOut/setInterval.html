@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #btn{
+        padding: 5px;
+        background-color: red;
+        width: 100px;
+        height: 30px;
+        font-weight: bold;
+    }
+    .h1{
+        margin-top: 400px;
+        margin: 20px;
+        font-size: 60px;
+        
+    }
+
+</style>
+<body>
+    <h1 class="h1"> See Magic ....💕</h1>
+    <button id="btn" onclick="finish()">Bored 🤐</button>
+    <script>
+        let myInterval = setInterval(changColor,1000);
+
+        function changColor(){
+            let x = document.body;
+            /// I didn't get that below line 💡🙋‍♂️🙋‍♂️🙋‍♂️
+            x.style.backgroundColor = x.style.backgroundColor == "purple"?"pink":"purple";
+        }
+        function finish(){
+            clearInterval(myInterval);
+        }
+
+    </script>
+    
+</body>
+</html>
