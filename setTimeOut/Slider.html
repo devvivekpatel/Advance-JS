@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        border: 2px solid black;
+        height: 400px;
+        width: 80%;
+        margin: auto;
+    }
+    .divBtn{
+     width: full;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 20px;
+    }
+    #img{
+        width: 100%;
+        height:100%;
+        background-position: center;
+    }
+</style>
+<body>
+    <div class="container" id="container">
+        <img src="img/_9fa12f08-2b2a-4f93-9abe-f7aeec1546ad.jpeg" alt="" id="img">
+
+    </div>
+    <div class="divBtn">
+        <button id="btn1" class="btn">NEXT</button>
+        <button id="btn2" class="btn">PREV</button>
+        <button id="stop" class="btn" onclick="stop()">STOP</button>
+    </div>
+    <script>
+
+        var imgAr = ["img/_1a3db3b6-2270-47cd-aee7-86b6bfc3e23f.jpeg", "img/_8926297e-1729-433a-9d57-d250d76df4e8.jpeg" , "img/_44e10462-de78-40e2-a96b-39441e8a9773.jpeg", "https://www.bing.com/images/search?view=detailV2&ccid=DpcLyyRC&id=C06EBA7B9EE8E12CF45CE1473B8A03F739C4EB43&thid=OIP.DpcLyyRCeTWoiiMNdCTXxQHaEK&mediaurl=https%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f08%2fBest-Nature-Full-HD-Images-For-Desktop.jpg&exph=1080&expw=1920&q=images&simid=608028775540946229&FORM=IRPRST&ck=336F6EAF87E87775870C13A6FB79AF35&selectedIndex=1&itb=0"];
+
+        var index =0;
+        function changeImg (){
+          
+            var img = document.getElementById('img');
+            img.src = imgAr[index];
+            console.log(index);
+            index++;
+            if(index == imgAr.length){
+                index =0;
+            }
+        }
+
+        let a =setInterval(changeImg,1000);
+
+        function stop(){
+            clearInterval(a);
+            console.log("HELLO");
+        }
+       
+        
+    </script>
+    
+</body>
+</html>

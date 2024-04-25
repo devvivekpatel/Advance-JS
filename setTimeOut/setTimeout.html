@@ -5,7 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .bg{
+        background-color: red;
+    }
+    .large{
+        font-size: 30px;
+    }
+    body{
+        background-color: aqua;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .btn{
+        position: fixed;
+        top: 500px;
+       left: 500px;
+    }
+</style>
 <body>
+    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, molestiae! Quis cupiditate, laudantium repudiandae hic ut sequi labore perspiciatis? Atque eaque modi consequatur iusto dolor, voluptates ab dicta veniam voluptatem.</h1>
+    <button id="btn" onclick="finish()">FINISH</button>
     <script>
     //    setTimeout(() => {
     //     alert("You are using setTimeOUt (😀)");
@@ -31,6 +50,28 @@
 //     }, 2000);
 //     clearInterval(a);
 
+//💡💡💡💡💡
+// for(let i=1; i<=10; i++){
+//     setTimeout(() => {
+//         document.write(i);
+        
+//     }, i*1000);
+// }
+
+
+let btn = document.getElementById("btn");
+let x = document.body;
+
+let myInterval = setInterval(() => {
+
+    x.classList.toggle("bg");
+    x.classList.toggle("large");
+    
+}, 2000);
+
+function finish(){
+    clearInterval(myInterval);
+}
 
     </script>
     

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para2{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>THe purpose of this file to know what is the difference among innerHTML,inneText and textContent 💡💡💡💡💡💡💡💡</h1>
+
+    <div class="para" id="line">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam dolorum, asperiores totam, excepturi esse vel quia corporis voluptas optio amet magnam. tem rem corporis ex numquam! Fugiat, nam. <span style="display: none;"> ❌❌❌❌hello I am NOT HERE ❌❌❌❌</span>  </div>
+
+    <div class="para2" id="para2"> This is paragraph number 2 😀😀</div>
+
+    <script>
+        document.write("<BR><BR><BR><BR>")
+        let a = document.getElementsByClassName("para")[0].innerHTML;
+        document.write("1",a);
+
+        //because className multiple ho sakte hai that's why you need to specify index otherwise it will return undefined
+        // document.write("<BR>2",document.getElementsByClassName("para").innerHTML);
+            document.write("<BR><BR><BR><BR>")
+        document.write("<BR>THIS IS INNERHTML ✅",document.getElementById("line").innerHTML);
+        document.write("<BR>THIS IS INNERTEXT ✅",document.getElementById("line").innerText);
+        document.write("<BR>5 THIS IS TEXTCONTENT ✅",document.getElementById("line").textContent);
+
+            //Now at console  you can see clearly difference among them 
+
+            console.log("<BR>THIS IS INNERHTML ✅",document.getElementById("line").innerHTML);
+            console.log("<BR>THIS IS TEXTCONTENT ✅",document.getElementById("line").textContent);
+            console.log("<BR>THIS IS INNERTEXT ✅",document.getElementById("line").innerText);
+
+            //it will setAttribute in line elsement mean add class new only new ....it always overwrite 💡💡
+        // document.getElementById("line").setAttribute('class',"new");
+
+        //this is how you can change background color of an element 💡💡💡
+       let title = document.getElementById("line");
+       title.style.backgroundColor = 'red';
+
+       document.getElementById("para2").style.backgroundColor = 'green';
+       document.getElementById("para2").style.padding = '50px';
+
+
+
+       
+            
+
+    </script>
+    
+</body>
+</html>

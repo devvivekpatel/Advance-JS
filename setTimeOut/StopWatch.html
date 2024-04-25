@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 50%;
+      height: 500px;
+      border: 1px solid black;
+      background-color: pink;
+    }
+    .h1 {
+      font-size: 100px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="h1" id="time"><span id="minute">00</span>:00</div>
+      <div class="btns">
+        <button class="btn" id="stop" onclick="stop()">STOP</button>
+        <button class="btn" id="clear" onclick="reset()">RESET</button>
+        <button class="btn" id="start" onclick="start()">START</button>
+      </div>
+    </div>
+
+    <script>
+      var second = 1;
+      var check;
+      var sec = document.getElementById("time");
+      var min=0;
+
+     
+      function changeTime() {
+        sec.innerText = second;
+        second++;
+        if(second >=60){
+            second =0;
+            min++;
+            console.log(min);
+        }
+      }
+
+      function start() {
+        check = setInterval(changeTime, 1000);
+      }
+
+      function reset(){
+        second = 0;
+        sec.innerText = 0;
+        //if you will not use it then it will restart  it
+        clearInterval(check);
+        console.log("HELLO");
+      }
+      function stop() {
+        clearInterval(check);
+        console.log("HEII");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>ONE</li>
+        <li>TWO</li>
+        <li>THREE</li>
+        <li>FOUR</li>
+        <li>FIVE</li>
+        <li>SIX</li>
+    </ul>
+    <script>
+
+        let myUl = document.querySelector('ul');
+
+        //you can also select like this 💡💡💡
+       let liSt= myUl.querySelector('li').style.backgroundColor = 'red';
+       
+       let a = myUl.querySelector('li');
+       a.style.backgroundColor ='green';
+       a.style.padding = '20px';
+       a.innerHTML = "Yes, I am ONE";
+
+       //it will give nodeList , it's not an array 💡💡
+       let x = myUl.querySelectorAll('li')
+       console.log(x);
+
+       //it will through error 💡 as i said that it's a node list
+    //    x.style.backgroundColor = 'blue';   🙋‍♂️
+       //that's why we will use this 💡💡
+       x[4].style.backgroundColor = 'blue';
+       x[4].style.color = 'red';
+
+       
+
+    </script>
+
+        
+
+   
+</body>
+</html>

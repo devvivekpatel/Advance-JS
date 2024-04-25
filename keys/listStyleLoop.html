@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+     <li>i am 1</li>
+     <li>i am 2</li>
+     <li>i am 3</li>
+     <li>i am 4</li>
+     <li>i am 5</li>
+     <li>i am 6</li>
+     <li>i am 7</li>
+     <li>i am 8</li>
+     <li>i am 9</li>
+     <li>i am 10</li>
+       
+    </ul>
+
+    <script>
+        let myUl = document.querySelector('ul')
+        let x = myUl.querySelectorAll('li');
+        console.log(x);
+
+        //it is how you can edit every item of a node list 💡💡
+        x.forEach(y => {
+            y.style.backgroundColor = 'pink';
+            y.style.padding = '10px';
+            y.style.margin = '15px';
+            y.style.color = 'blue';
+        });
+
+    
+    </script> 
+</body>
+
+</html>

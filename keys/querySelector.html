@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="heading" id="imh1">Hello, this is Viv</div>
+    <div class="heading" id="imh2">Hello, this is Sudh</div>
+    <div class="heading" id="imh3">Hello, this is Ansh</div>
+    <div class="heading" id="imh4">Hello, this is Tig</div>
+    <div class="heading" id="imh5">Hello, this is Raone</div>
+    <div class="heading" id="imh6">Hello, this is Jeevan</div>
+    <input type="password"><BR>
+    <script>
+
+// This is how you can use ClassName   💡💡 you need to specify index of classs 💡
+        let a =document.getElementsByClassName('heading')[0].textContent = "Hello, this is vivek";
+        console.log(a)
+
+        document.write(a);
+        document.getElementsByClassName('heading')[1].textContent = "Who are you";
+
+        //it will give first class of heading 
+        console.log("querySelector('.heading')",document.querySelector(".heading"));
+        console.log(document.querySelector("#imh4"));
+        console.log(document.querySelectorAll(".heading"));
+        //it will give first di
+        console.log(document.querySelector("div"));
+        console.log(document.querySelectorAll("div"));
+        // document.querySelector("input[type="password"]");
+        //remember you need to use both "" or '' because if you will use 1 you may face problems 💡💡💡💡
+       console.log( "this is how to select an input",document.querySelector("input[type='password']") );
+
+    </script>
+</body>
+</html>
