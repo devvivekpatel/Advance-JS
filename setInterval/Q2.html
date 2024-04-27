@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Q2. Write a function that uses setInterval to rotate an array of elements every 3 seconds. The rotation should move the last element to the front of the array. For example, [1,2,3,4] becomes [4,1,2,3] after the rotation. -->
+    <script>
+        var ar = [1,2,3,4]
+
+        function rotation(){
+            console.log(ar); 
+            document.write("<BR>",ar);
+            ar.unshift(ar[ar.length-1]);
+            ar.pop();
+        }
+       setInterval(rotation,3000);
+      
+    </script>
+</body>
+</html>

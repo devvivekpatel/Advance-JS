@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #h{
+        font-size: 80px;
+        color: red;
+    }
+</style>
+<body>
+    <!-- Q2. Write a function that simulates a delay before executing a task. Use setTimeOUt to delay the execution of a callback function by 2 seconds. -->
+    <h1 id="h"></h1>
+    <script>
+
+function calculation(greet){
+    let a = prompt("Enter your name ?");
+
+    setTimeout(function(){
+        greet(a)
+    },3000)
+
+}
+
+function greet(result){
+
+    let text = document.getElementById("h");
+    text.innerHTML = `<BR>HELLO ${result} 🤐🤐`;
+   
+    // document.write("<BR>HELLO : "+result," 🤐")
+}
+
+calculation(greet);
+    </script>
+    
+    
+</body>
+</html>

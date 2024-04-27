@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Q1. Write a function that uses setInterval to print "Tick" every 1 second and "Tock" every 2 seconds. The function should print "TickTock" every 5 seconds. -->
+    <script>
+
+// var count =0;
+//         function greet(){
+//             count++;
+
+//         if(count == 1 || count == 3){
+//             console.log("Tic",count);
+//             count++;
+//         }
+//         if(count == 2 || count == 4){
+//             console.log("Tok",count);
+//             count++;
+//         }
+//          if(count ==5){
+//             console.log( "Tik Tok",count )
+//             count++;
+//             console.log(count);
+//         }
+//         if(count>5){
+//             count ==0;
+//         }
+
+// console.log(count);
+//         }
+//         console.log(count);
+//         setInterval(greet,1000);
+
+var count =0;
+
+function greet(){
+    if(count>=5){
+        count =0;
+    }
+    count++;
+
+    console.log(count);
+    if(count%2 != 0 && count%5 !=0){
+        console.log("Tick");
+        document.write("<BR>Tick")
+    }
+    else if(count%2==0){
+        console.log("Tock");
+        document.write("<BR>Tock")
+    }
+    else if(count%5 ==0){
+        console.log("Tick Tock");
+        document.write("<BR>Tick Tock");
+    }
+    
+}
+setInterval(greet,1000);
+        
+    </script>
+</body>
+</html>

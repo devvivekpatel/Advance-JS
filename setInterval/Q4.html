@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #h{
+        margin-top: 300px;
+    }
+</style>
+
+<body>
+                <h1 id="h">HELLO,This is me</h1>
+
+
+ <script>
+     
+     var me = true;
+     
+      var h = document.getElementById("h");
+     function check(){
+
+        if(me == true){
+            h.style.fontSize='50px';
+            h.style.color = 'red';
+            console.log("1")
+            me=false;
+
+        }
+        //if you will use only if here you will must face a problem 💡💡 ye sirf if likhne par kam nhi krta 
+        // 💡💡 learn difference between if if if, or if else if
+
+        else if(me == false){
+            h.style.fontSize = '100px';
+            h.style.color = 'blue';
+            console.log("2")
+            me = true;
+        }
+    }
+    setInterval(check,1000);
+
+    </script>
+    
+</body>
+</html>
