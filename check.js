@@ -30,28 +30,36 @@
 // }
 // calculation(greet);
 
-var count =0;
+// var count =0;
 
-function greet(){
-    if(count>=5){
-        count =0;
-    }
-    count++;
+// function greet(){
+//     if(count>=5){
+//         count =0;
+//     }
+//     count++;
 
-    if(count%2 != 0 && count%5 !=0){
-        console.log("Tick");
+//     if(count%2 != 0 && count%5 !=0){
+//         console.log("Tick");
        
-    }
-    else if(count%2==0){
-        console.log("Tock");
+//     }
+//     else if(count%2==0){
+//         console.log("Tock");
     
-    }
-    else if(count%5 ==0){
-        console.log("Tick Tock");
+//     }
+//     else if(count%5 ==0){
+//         console.log("Tick Tock");
        
-    }
+//     }
     
+// }
+// setInterval(greet,1000);
+
+console.log("This is one");
+
+function fun(){
+    console.log("This is two");
 }
-setInterval(greet,1000);
+setTimeout(fun,0);
+console.log("This is three");
 
     

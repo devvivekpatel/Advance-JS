@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent">
+        <!-- for increasing number of node 🥴 -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+       
+    </div>
+    <script>
+        let parent = document.querySelector(".parent");
+        console.log(parent);
+        console.log(parent.children);
+        console.log(parent.children[2].innerHTML);
+        console.log(parent.children)
+        //This is other way 
+        console.log("It is first child",parent.firstElementChild)
+        console.log("It is last child",parent.lastElementChild.innerHTML)
+        //You can also apply styles 
+        parent.children[0].style.color = 'red';
+
+        for(let i=0; i<parent.children.length; i++){
+            console.log(parent.children[i]);
+        }
+        for(let i=0; i<parent.children.length; i++){
+            document.write(parent.children[i].innerHTML);
+        }
+
+        let monday = document.querySelector(".day");
+        //This is how you can access parent of an element
+        console.log(monday.parentElement.innerHTML);
+        document.write("<BR><BR><BR>",monday.parentElement.innerHTML);
+
+        console.log("It is parent element ",monday.parentElement);
+        console.log("This how you can access sibling 💡",monday.nextElementSibling);
+        console.log("This how you can access sibling 💡",monday.nextElementSibling.innerHTML);
+
+        //nodes Nodelist is returning 9 reason 🔴🔴 kyoki ye text ko bhi calculate karta hai dhyan rakh 🥴😑 matlab jaise tune parent k bad next line ki fir monday likha fir next line fir tuesday calculate kar k total 7 ✅✅ agar comment bhi likhoge to vo bhi add hoga 😑 #remember# par 1 enter aur bole to next line k bad dhyan rakh 1 hi count hoga chahe tu jitne enter mar 🙋‍♂️🙋‍♂️🤐 ok 
+        console.log(parent.childNodes);
+    </script>
+    
+</body>
+</html>
