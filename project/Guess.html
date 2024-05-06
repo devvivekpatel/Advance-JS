@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        flex-direction: column;
+    }
+ 
+    #num{
+        border-radius: 5px;
+        height: 50px;
+        width: 200px;
+        font-size: 40px;
+        border: none;
+        padding: 10px;
+        text-align: center;
+        margin-top: 70px;
+    }
+    .box{
+        height: 450px;
+        width: 600px;
+        gap: 10px;
+        background-color: rgb(201, 27, 27);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        color: white;
+        border-radius: 10px;
+    }
+    #btn{
+        width: 100px;
+        height: 30px;
+        border-radius: 3px;
+        border: none;
+        margin-top: -20px;
+    }
+    .para{
+        /* border:2px solid black; */
+        background-color: rgb(158, 92, 0);
+        width: 400px;
+        font-family: sans-serif;
+        text-align: center;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* margin-top: -100px; */
+        
+    }
+    h1{
+        /* border: 2px solid black; */
+        font-weight: 700;
+    }
+    h3{
+        /* border: 2px solid black; */
+        font-size: 15px;
+        color: rgb(0, 204, 255);
+        font-weight: lighter;
+        /* margin-top: -10px; */
+    }
+    #para{
+        font-size: 20px;
+        color: rgb(157, 255, 0);
+    }
+    #topHead{
+        height: 40px;
+        width: 600px;
+        /* border: 1px solid white; */
+        color: white;
+        text-align: center;
+    }
+
+</style>
+<body>
+    <h1 id="topHead">Guess the number 😀 </h1>
+    <div class="box">
+        <div class="para">
+        
+        <h3>Guess a number between 1 to 50</h3>
+    </div>
+    <input type="number" id="num">
+    <button id="btn" onclick="check()">OK</button>
+    <p id="para"></p>
+</div>
+    <script>
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+var random = getRandomInt(1, 50);
+// console.log(random);
+
+var counter =0;
+function check(){
+    var num = document.getElementById("num");
+    var topHead = document.getElementById("topHead");
+    num = num.value;
+    var para = document.getElementById("para");
+ 
+
+    if(num==random){
+        para.innerHTML = "YOu guessed it right! Congratulations 😀"
+        // document.write("YOu guessed it right! Congratulations 😀");
+        counter++;
+        console.log(counter);
+        if(counter>5){
+            topHead.innerHTML = `You took : ${counter} chances , You lost ❌🥴🤐 `
+        }
+        else{
+        topHead.innerHTML = `You took : ${counter} chances , you won💡✨`
+        }
+
+    }
+    else if(num>random){
+        para.innerHTML = "It's too high ! 😑";
+        counter++;
+
+    }
+     else if(num<random){
+        para.innerHTML = "NOw, it's too minimum 🥴";
+        counter++;
+    }
+}
+
+
+    </script>
+    
+</body>
+</html>

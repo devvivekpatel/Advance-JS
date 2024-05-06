@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let div = document.createElement("div");
+        console.log(div);
+        div.className= "newElement";
+        div.id = "newElementId";
+        console.log(div.id);
+        div.style.backgroundColor = 'blue';
+        div.style.padding = "20px";
+        div.setAttribute("title","HELLO NEW ELEMENT");
+
+        //overwritted class name 😑
+        div.setAttribute("class","newWay");
+
+        div.innerHTML = "HEllo";
+        //this is how you can show an element to the web page
+        document.body.appendChild(div);
+        let a = document.getElementById("newElementId");
+        console.log(a);
+
+
+        //it is not overwritting but innerHTML overwrites the value it will totally change the value of given element 🤐🤐 
+        let addText = document.createTextNode(" Now it has changed");
+        div.appendChild(addText);
+       
+        
+
+        //i was trying to create a new element inside div 😑 and it's not workig
+        // let h = document.body.div.createElement("h3");
+        // h.innerHTML = "HII i am h3";
+        // document.body.div.appendChild(h);
+
+        //And now this is how you can create elements using create element
+
+        let div2 = document.createElement('div');
+        div2.innerHTML = "YEs, i am div2";
+        div2.style.backgroundColor = 'green';
+        div2.style.color = 'white';
+        
+        
+
+        document.body.appendChild(div2);
+        console.log(div2);
+
+    
+    </script>
+    
+</body>
+</html>

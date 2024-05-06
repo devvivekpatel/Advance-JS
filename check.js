@@ -54,12 +54,22 @@
 // }
 // setInterval(greet,1000);
 
-console.log("This is one");
+// console.log("This is one");
 
-function fun(){
-    console.log("This is two");
+// function fun(){
+//     console.log("This is two");
+// }
+// setTimeout(fun,1000);
+
+
+// for(let i=0; i<10000; i++){
+//     console.log("i am late");
+// }
+
+for(let i=0; i<=5; i++){
+    for(let j=1; j<=4; j++){
+        console.log("*");
+    }
 }
-setTimeout(fun,0);
-console.log("This is three");
 
     

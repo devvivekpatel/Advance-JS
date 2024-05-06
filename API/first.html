@@ -60,17 +60,52 @@ table {
                 school:"Sardar Patel",
                 university:"TRffS"
 
-            }
+            },
+            {
+                name:"vinayak patel",
+                id: 4,
+                school:"Sardar Patel",
+                university:"TRffS"
+
+            },
+            {
+                name:"vinayak patel",
+                id: 5,
+                school:"Sardar Patel",
+                university:"TRffS"
+
+            },
+            {
+                name:"vinayak patel",
+                id: 5,
+                school:"Sardar Patel",
+                university:"TRffS"
+
+            },
+            {
+                name:"vinayak patel",
+                id: 6,
+                school:"Sardar Patel",
+                university:"TRffS"
+
+            },
+            {
+                name:"vinayak patel",
+                id: 7,
+                school:"Sardar Patel",
+                university:"TRffS"
+
+            },
         ];
 
       
 
-        function showData(userdata){
+        function showData(ar){
 
-            var tableBody = document.querySelector('#userData tbody');
+        var tableBody = document.querySelector('#userData tbody');
         tableBody.innerHTML = '';
     
-        userData.forEach(function(user) {
+        ar.forEach(function(user) {
           var row = document.createElement('tr');
           console.log("row is ",row)
           row.innerHTML = `
@@ -86,29 +121,7 @@ table {
         }
         showData(ar);
 
-//         function populateTable(userData) {
-//     var tableBody = document.querySelector('#userData tbody');
-    
-//     // Clear existing table rows
-//     tableBody.innerHTML = '';
 
-//     // Loop through the user data and create table rows
-//     //user for only value
-//     userData.forEach(function(user) {
-//       var row = document.createElement('tr');
-//       console.log("row is ",row)
-//       row.innerHTML = `
-//         <td>${user.id}</td>
-//         <td>${user.name}</td>
-//         <td>${user.username}</td>
-//         <td>${user.email}</td>
-//         <td>${user.phone}</td>
-//         <td>${user.website}</td>
-//         <td>${user.company.name}</td>
-//       `;
-//       tableBody.appendChild(row);
-//     });
-//   }
 
 
     </script>
