@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit or Remove Elements Using JS</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <ul class="ul">
+        <li>Vivek</li>
+
+    </ul>
+    <script>
+
+        function add(name){
+            let li = document.createElement('li');
+            //when you are using innerHTML it is traversing whole tree mean it is not so good for the big projects so you need to practice appendchild ❌
+            li.innerHTML = name;
+            document.querySelector(".ul").appendChild(li);
+
+        }
+        add("Tiger");
+        add("Shudhanshu");
+
+        //it is optimizing way or you must use that way ✅
+        function add2(name){
+            let li = document.createElement('li');
+            li.appendChild(document.createTextNode(name));
+            document.querySelector('.ul').appendChild(li);
+        }
+        add2("ANkur");
+        add2("Vicky");
+
+        //NOw edit values 💡
+
+        let ank = document.querySelector("li:nth-child(4)");
+        // console.log(ank);
+        // ank.appendChild(document.createTextNode('Tarzan'));
+        // ank.textContent = 'Tarzan';
+        let newLi = document.createElement('li');
+        newLi.appendChild(document.createTextNode('Tarzannn'));
+
+        ank.replaceWith(newLi);
+
+        //another way to edit values 💡
+
+        let vic = document.querySelector('li:nth-child(5)');
+
+        //below code is also giving a bullet 🤐
+        // let vic = document.querySelector('li:first-child');
+
+        // Why after this one new bullet has created automatically 🤐🤐
+        vic.outerHTML = '<li>Rohit<\li>';
+
+            //remove Element
+
+        // let last = document.querySelector('li:last-child');
+        let last = document.querySelector('li:nth-child(5)');
+        last.remove();
+
+    </script>
+</body>
+</html>
