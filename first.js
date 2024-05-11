@@ -1,4 +1,4 @@
-// console.log("HIi, this is.");
+console.log("HIi, this is.");
 
 for(let i=1; i<=5; i++){
     for(let j=1; j<=i; j++){
