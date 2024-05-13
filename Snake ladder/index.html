@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .board{
+            display: grid;
+            grid-template-rows: repeat(10,65px);
+            grid-template-columns:  repeat(10,120px);
+            /* grid-auto-flow: row-reverse; */
+           
+            /* background-image: url('https://media.istockphoto.com/id/531466314/vector/snakes-and-ladders.jpg?s=612x612&w=0&k=20&c=YYRwkxtVxAXrYV7kFCHKW4h0SHFS4sSSoaj-s9OeHF4=');
+            background-repeat: no-repeat;
+            background-size: cover;  */
+            /* background-position: center;  */
+
+            height: 90vh;
+            width: 80vw;
+          
+        
+
+        }
+        .cell{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+            border: 1px solid black;
+        }
+        .player1{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: green;
+
+        }
+        .player2{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: red;
+        }
+        .first{
+            width: 10%;
+            height: 100%;
+        }
+
+        
+    </style>
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="first">
+        <div class="player1"></div>
+        <div class="player2"></div>
+        <button onclick="btn()">Click</button>
+    </div>
+    <div class="board">
+
+    </div>
+    <script>
+
+//cells creation
+        let board = document.getElementsByClassName('board')[0];
+        for (let i = 1; i<=100; i++) {
+        const cell = document.createElement('div');
+        cell.textContent = i;
+        // cell.classList.add('cell');
+        cell.className = `cell cell-${i}`;
+        board.appendChild(cell);
+        console.log(cell);
+    }
+
+
+
+    //roll dice
+    function rollDice() {
+    return Math.floor(Math.random() * 6) + 1;
+}
+
+var count =0;
+var score =0;
+var k=0;
+
+function player1(){
+    let dice = rollDice();
+    count=dice;
+    score += count;
+
+    // board.classList.add('player1');
+    // board:nth-child(5).classList.add('player2');
+    var z =document.getElementsByClassName(`cell-${score}`);
+    console.log(z);
+    // z.style.backgroundColor = "blue";
+    // z.innerHTML ='555';
+    // z.style.backgroundColor = 'blue';
+    
+
+     
+    // z.appendChild(player1);
+    // console.log(z);
+}
+
+function btn(){
+    player1();
+
+}
+
+
+
+
+
+        
+
+    </script>
+    
+</body>
+</html>

@@ -5,18 +5,18 @@ function check(numerator , denominator)
     let z = new Promise((resolve , reject)=>{
 
         if(denominator >=1){
-             resolve("it is",numerator/denominator);
+             resolve (`Your answer is : ${numerator / denominator} `);
         }
-        else if(numerator==0){
+        else {
 
-            reject (new Error("Numerator is 0"));
-             
+            reject (new Error("Cannot divide by zero"));
 
         }
     })
+    return z;
 }
 
-check(10,5).z.then(()=>{
+check(10,4).then((resolve)=>{
     console.log(resolve);
 }).catch((error)=>{
     console.error(error.message);
