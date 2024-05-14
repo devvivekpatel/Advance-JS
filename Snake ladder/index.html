@@ -33,6 +33,12 @@
           
             border: 1px solid black;
         }
+        .player{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: green;
+        }
         .player1{
             height: 50px;
             width: 50px;
@@ -58,9 +64,12 @@
 </head>
 <body>
     <div class="first">
-        <div class="player1"></div>
+        <div class="player"></div>
         <div class="player2"></div>
+        
         <button onclick="btn()">Click</button>
+
+        <p id="diceValue">0</p>
     </div>
     <div class="board">
 
@@ -75,7 +84,7 @@
         // cell.classList.add('cell');
         cell.className = `cell cell-${i}`;
         board.appendChild(cell);
-        console.log(cell);
+        // console.log(cell);
     }
 
 
@@ -87,29 +96,80 @@
 
 var count =0;
 var score =0;
-var k=0;
+
 
 function player1(){
     let dice = rollDice();
+    document.getElementById('diceValue').innerHTML=`Green got : ${dice}`;
+   
     count=dice;
     score += count;
+    console.log(dice);
+    console.log("player1 score :",score)
 
     // board.classList.add('player1');
     // board:nth-child(5).classList.add('player2');
-    var z =document.getElementsByClassName(`cell-${score}`);
-    console.log(z);
-    // z.style.backgroundColor = "blue";
-    // z.innerHTML ='555';
-    // z.style.backgroundColor = 'blue';
+    if(score>100){
+        score =score-dice;
+    }
+    else if(score==100){
+        alert("Green won ✨✨✨✨");
+
+    }
+    var z =document.getElementsByClassName(`cell-${score}`)[0];
+    // console.log(z);
     
+    // z.style.backgroundColor = "red";
+    var player = document.getElementsByClassName('player')[0];
 
      
-    // z.appendChild(player1);
+    z.appendChild(player);
+    // console.log(z);
+    // player2();
+}
+
+var count1 =0;
+var score1 =0;
+function player2(){
+    let dice = rollDice();
+    document.getElementById('diceValue').innerHTML=`Red got : ${dice}`;
+    count1=dice;
+    score1 += count1;
+    console.log(dice);
+    console.log("player 2",score1);
+    // board.classList.add('player1');
+    // board:nth-child(5).classList.add('player2');
+    if(score1>100){
+        score1 =score1-dice;
+    }
+    else if(score1==100){
+        alert("Red won ✨✨✨✨");
+
+    }
+    var z =document.getElementsByClassName(`cell-${score1}`)[0];
+    // console.log(z);
+    
+    // z.style.backgroundColor = "red";
+    var player2 = document.getElementsByClassName('player2')[0];
+
+     
+    z.appendChild(player2);
+    // player1();
     // console.log(z);
 }
 
+let counter =0;
 function btn(){
-    player1();
+    
+
+    if(counter==0){
+        player1();
+        counter++;
+    }
+    else if(counter==1){
+        player2();
+        counter =0;
+    }
 
 }
 
