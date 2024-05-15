@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function obj(a){
+var snakes={
+    15:5,
+    99:2,
+    56:20,
+    80:40,
+    75:15,
+};
+
+for(let key in snakes){
+
+    if(a == key){
+        a = snakes[key];
+        console.log(key,'🔴🔴');
+        console.log(snakes[key],"🔴🔴")
+        console.log(a ,"🔴")
+        return a;
+    }
+    else{
+        return a;
+    }
+}
+}
+
+let score =0;
+
+score = obj(score);
+console.log(score);
+
+    </script>
+    
+</body>
+</html>
