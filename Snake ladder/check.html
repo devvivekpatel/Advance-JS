@@ -13,12 +13,12 @@
             display: grid;
             grid-template-rows: repeat(10,65px);
             grid-template-columns:  repeat(10,120px);
-            /* grid-auto-flow: row-reverse; */
+             /* grid-auto-flow: column-reverse;  */
            
-            /* background-image: url('https://media.istockphoto.com/id/531466314/vector/snakes-and-ladders.jpg?s=612x612&w=0&k=20&c=YYRwkxtVxAXrYV7kFCHKW4h0SHFS4sSSoaj-s9OeHF4=');
+            background-image: url("/Snake ladder/img.jpg");
             background-repeat: no-repeat;
-            background-size: cover;  */
-            /* background-position: center;  */
+            background-size: cover; 
+             background-position: center; 
 
             height: 90vh;
             width: 80vw;
@@ -30,7 +30,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-          
             border: 1px solid black;
         }
         .player{
@@ -75,16 +74,22 @@
 
     </div>
     <script>
+        let rollingSound = new Audio('rpg-dice-rolling-95182.mp3');
+        var winSound = new Audio('winharpsichord-39642.mp3')
 
 //cells creation
         let board = document.getElementsByClassName('board')[0];
         for (let i = 100; i>=1; i--) {
         const cell = document.createElement('div');
         cell.textContent = i;
+
+        // if(i==90){
+        //     cell.style.gridRowRe = 'right';
+        // }
         // cell.classList.add('cell');
-        if(i%2==0){
-            cell.style.backgroundColor = 'yellow';
-        }
+        // if(i%2==0){
+        //     cell.style.backgroundColor = 'pink';
+        // }
         cell.className = `cell cell-${i}`;
         board.appendChild(cell);
         // console.log(cell);
@@ -162,11 +167,22 @@ function obj(a) {
 
 var count =0;
 var score =0;
+var diceOne =true;
 
 
 function player1(){
     let dice = rollDice();
-    document.getElementById('diceValue').innerHTML=`Green got : ${dice}`;
+    document.getElementById('diceValue').innerHTML=`Blue got : ${dice}`;
+
+    if(diceOne){
+        if(dice==1){
+            diceOne = false;
+        }
+        else{
+            dice =0;
+           
+        }
+    }
    
     count=dice;
     score += count;
@@ -182,6 +198,7 @@ function player1(){
     else if(score==100){
         score =100;
 
+        winSound.play();
         setTimeout(()=>{
             alert("Blue won ✨✨✨✨✨")
         },500);
@@ -191,24 +208,43 @@ function player1(){
        },2000)
 
     }
-    var z =document.getElementsByClassName(`cell-${score}`)[0];
-    var player = document.getElementsByClassName('player')[0];
-    z.appendChild(player);
 
-    // console.log(z);
-    
-    // z.style.backgroundColor = "red";
+    if(score==0){
+        console.log("Score is 0");
+        
+    }
+    else{
 
-     
-    // console.log(z);
-    // player2();
+        
+            var z =document.getElementsByClassName(`cell-${score}`)[0];
+            var player = document.getElementsByClassName('player')[0];
+            z.appendChild(player);
+    }
+
+    // if(count==6){
+    //     alert("YOu got another chance");
+    //     player1();
+    // }
+
 }
 
 var count1 =0;
 var score1 =0;
+var diceTwo = true;
 function player2(){
     let dice = rollDice();
     document.getElementById('diceValue').innerHTML=`Red got : ${dice}`;
+    
+    if(diceTwo){
+        if(dice==1){
+            diceTwo = false;
+        }
+        else{
+            dice =0;
+      
+        }
+    }
+
     count1=dice;
     score1 += count1;
     console.log(dice);
@@ -223,6 +259,7 @@ function player2(){
     else if(score1==100){
         score =100;
      
+        winSound.play();
         setTimeout(()=>{
             alert("Red won ✨✨✨✨✨")
         },500);
@@ -234,20 +271,34 @@ function player2(){
         
 
     }
-    var z =document.getElementsByClassName(`cell-${score1}`)[0];
-    // console.log(z);
-    
-    // z.style.backgroundColor = "red";
-    var player2 = document.getElementsByClassName('player2')[0];
+    if(score1==0){
+        console.log("Score is 0");
+        
+    }
+    else{
 
-     
-    z.appendChild(player2);
-    // player1();
-    // console.log(z);
+        var z =document.getElementsByClassName(`cell-${score1}`)[0];
+        // console.log(z);
+        
+        // z.style.backgroundColor = "red";
+        var player2 = document.getElementsByClassName('player2')[0];
+    
+         
+        z.appendChild(player2);
+        // player1();
+        // console.log(z);
+    }
+
+    // if(count1==6){
+    //     alert("YOu got an another chance ")
+    //     player2();
+        
+    // }
 }
 
-let counter =0;
+var counter =0;
 function btn(){
+    rollingSound.play();
     
 
     if(counter==0){
@@ -260,7 +311,6 @@ function btn(){
     }
 
 }
-
         
 
     </script>
