@@ -15,10 +15,10 @@
             grid-template-columns:  repeat(10,120px);
              /* grid-auto-flow: column-reverse;  */
            
-            background-image: url("/Snake ladder/img.jpg");
+            /* background-image: url("/Snake ladder/img.jpg");
             background-repeat: no-repeat;
             background-size: cover; 
-             background-position: center; 
+             background-position: center;  */
 
             height: 90vh;
             width: 80vw;
@@ -87,9 +87,9 @@
         //     cell.style.gridRowRe = 'right';
         // }
         // cell.classList.add('cell');
-        // if(i%2==0){
-        //     cell.style.backgroundColor = 'pink';
-        // }
+        if(i%2==0){
+            cell.style.backgroundColor = 'pink';
+        }
         cell.className = `cell cell-${i}`;
         board.appendChild(cell);
         // console.log(cell);
